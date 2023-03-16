@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production node finalize-build",
-    "build:serverless": "NODE_ENV=production SERVERLESS=true node finalize-build"
   },
   "dependencies": {
     "fs-extra": "^11.1.0"
