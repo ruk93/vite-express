@@ -12,7 +12,7 @@
     "build:client": "yarn workspace client build",
     "build:server": "yarn workspace server build",
     "build": "concurrently \"yarn:build:*\" && yarn workspace scripts build",
-    "serverless-build": "yarn build:server && yarn build:client && yarn workspace scripts build",
+    "serverless-build": "yarn workspace server build:serverless && yarn build:client && yarn workspace scripts build:serverless",
     "preview": "yarn workspace server preview",
     "add:client": "yarn workspace client add",
     "add:server": "yarn workspace server add",

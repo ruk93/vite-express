@@ -18,4 +18,12 @@ const exec = () => {
   copyClient();
 };
 
-exec();
+const execServerless = () => {
+  fs.copySync(getPath("client/dist"), getPath("server/dist"));
+};
+
+if (process.env.SERVERLESS) {
+  execServerless();
+} else {
+  exec();
+}
