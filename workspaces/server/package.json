@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=dev concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
-    "build": "NODE_ENV=production ncc build src/index.ts -o standalone-dist -m",
-    "build:serverless": "NODE_ENV=production STANDALONE=false tsc --outDir ./dist/api",
-    "preview": "STANDALONE=true node standalone-dist/index"
+    "build": "rm -rf ./dist && NODE_ENV=production ncc build src/index.ts -o dist -m",
+    "preview": "NODE_ENV=production node ./dist/index"
   },
   "dependencies": {
     "@types/express-http-proxy": "^1.6.3",
