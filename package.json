@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "workspaces": [
+    "workspaces/client",
+    "workspaces/server",
+    "workspaces/scripts"
+  ],
+  "scripts": {
+    "dev:client": "yarn workspace client dev",
+    "dev:server": "yarn workspace server dev",
+    "dev": "concurrently \"yarn:dev:*\"",
+    "build:client": "yarn workspace client build",
+    "build:server": "yarn workspace server build",
+    "build": "concurrently \"yarn:build:*\" && yarn workspace scripts build",
+    "preview": "yarn workspace server preview",
+    "add:client": "yarn workspace client add",
+    "add:server": "yarn workspace server add",
+    "add:scripts": "yarn workspace scripts add"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
