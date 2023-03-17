@@ -1,9 +1,16 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { landingPageActions, landingPageSelectors } from './landingPageSlice'
+import { useAppDispatch, useAppSelector } from '../../library/store';
 
-function App() {
-  const [count, setCount] = useState(0)
+function LandingPage() {
+
+  const count = useAppSelector(landingPageSelectors.count);
+  const dispatch = useAppDispatch();
+
+  const onClickCount = () => {
+    dispatch(landingPageActions.increment());
+  }
 
   return (
     <div className="App">
@@ -17,7 +24,7 @@ function App() {
       </div>
       <h1>Vite + React + Express</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={onClickCount}>
           count is {count}
         </button>
         <p>
@@ -31,4 +38,4 @@ function App() {
   )
 }
 
-export default App
+export default LandingPage
