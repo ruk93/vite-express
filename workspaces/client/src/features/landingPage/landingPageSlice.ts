@@ -6,7 +6,7 @@ type LandingPageState = {
 };
 
 const initialState: LandingPageState = {
-  count: 0,
+  count: window.appEnv.initialCount,
 };
 
 const landingPageSlice = createSlice({
